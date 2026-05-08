@@ -5,7 +5,7 @@ Homebrew tap for `proj`.
 ## Install
 
 ```bash
-brew tap kylehurd/proj
+brew tap khurd21/proj
 brew install proj
 ```
 
