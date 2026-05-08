@@ -6,7 +6,8 @@ Homebrew tap for `proj`.
 
 ```bash
 brew tap khurd21/proj
-brew install proj
+brew install khurd21/proj/proj
+proj --add-path <path-to-your-workplace>
 ```
 
 ## What this tap sets up
