@@ -30,7 +30,7 @@ class Proj < Formula
 
         case $state in
           project)
-            compadd -a projects
+            _describe -t projects 'project' projects
             ;;
         esac
       }
