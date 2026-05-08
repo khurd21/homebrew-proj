@@ -25,7 +25,11 @@ class Proj < Formula
 
         _arguments -C \
           '--list-projects[List configured git repositories]' \
-          '--completion[Print completion script]:shell:(zsh)' \
+          '--view-settings[Print configured scan directories and editor]' \
+          '--add-path[Add a scan directory path to config/proj.yaml]:path:_files -/' \
+          '--remove-path=[Remove a scan directory path from config/proj.yaml (omit value for interactive mode)]::path:_files -/' \
+          '--clear-paths[Clear all scan directory paths from config/proj.yaml]' \
+          '--set-editor[Set editor in config/proj.yaml]:editor:(vscode)' \
           '1:project name:->project'
 
         case $state in
@@ -64,7 +68,7 @@ class Proj < Formula
   end
 
   test do
-    output = shell_output("#{bin}/proj --completion zsh")
-    assert_match "#compdef proj", output
+    output = shell_output("#{bin}/proj --view-settings")
+    assert_match "Settings{", output
   end
 end
