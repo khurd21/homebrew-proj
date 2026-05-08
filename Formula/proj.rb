@@ -14,8 +14,29 @@ class Proj < Formula
 
     libexec.install "build/proj"
 
-    completion = Utils.safe_popen_read(buildpath/"build/proj", "--completion", "zsh")
-    (zsh_completion/"_proj").write completion
+    (zsh_completion/"_proj").write <<~EOS
+      #compdef proj
+
+      _proj() {
+        local context state line
+        typeset -A opt_args
+        local -a projects
+        projects=("${(@f)$(proj --list-projects 2>/dev/null)}")
+
+        _arguments -C \
+          '--list-projects[List configured git repositories]' \
+          '--completion[Print completion script]:shell:(zsh)' \
+          '1:project name:->project'
+
+        case $state in
+          project)
+            compadd -a projects
+            ;;
+        esac
+      }
+
+      compdef _proj proj
+    EOS
 
     (pkgshare/"config").install "config/proj.yaml"
 
