@@ -1,7 +1,7 @@
 class Proj < Formula
   desc "Open a configured git project in your editor"
   homepage "https://github.com/khurd21/proj"
-  url "file:///Users/kylehurd/Workplace/proj", using: :git, branch: "main"
+  url "https://github.com/khurd21/proj.git", branch: "main"
   version "0.1.0"
 
   depends_on "cmake" => :build
