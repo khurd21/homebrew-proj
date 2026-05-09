@@ -1,9 +1,9 @@
 class Proj < Formula
   desc "Open a configured git project in your editor"
   homepage "https://github.com/khurd21/proj"
-  url "https://github.com/khurd21/proj/archive/refs/tags/v0.1.1.tar.gz"
-  sha256 "6487d6717dd20910c3f01d8737f2e02db093f0e68838609b9847e9f8eae3c1a3"
-  version "0.1.1"
+  url "https://github.com/khurd21/proj/archive/refs/tags/v0.1.2.tar.gz"
+  sha256 "748ca461c2ee9bacd62ab51cff94fed5417522ffecb4a6bc4459c138364dc8a5"
+  version "0.1.2"
 
   depends_on "cmake" => :build
   depends_on "cli11"
