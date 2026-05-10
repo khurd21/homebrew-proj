@@ -19,3 +19,12 @@ proj --add-path <path-to-your-workplace>
   `$(brew --prefix)/var/proj/config/proj.yaml`
 
 The wrapper script runs `proj` from `$(brew --prefix)/var/proj` so the app finds `config/proj.yaml` without requiring additional shell configuration.
+
+## Troubleshooting zsh completion
+
+If completion does not load in a shell session, initialize zsh completion and retry:
+
+```bash
+autoload -Uz compinit
+compinit -i
+```
